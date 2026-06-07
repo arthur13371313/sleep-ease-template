@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RestaBem — Durma melhor a partir de hoje</title>
+  <meta name="description" content="Programa natural para melhorar a qualidade do seu sono. Adormeça mais rápido, durma sem interrupções e acorde com energia." />
+
+  <!-- ======== Open Graph (compartilhamento) ======== -->
+  <meta property="og:title" content="RestaBem — Durma melhor a partir de hoje" />
+  <meta property="og:description" content="Programa natural para melhorar a qualidade do seu sono." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       RestaBem — Landing page template
+       Tema configurável: edite as variáveis abaixo.
+       ========================================================= */
+    :root {
+      --bg:        #0e1530;
+      --bg-soft:   #16204a;
+      --card:      #1b2856;
+      --accent:    #8b7cf6;
+      --accent-2:  #5ad1c8;
+      --text:      #eef1ff;
+      --text-dim:  #aeb6da;
+      --border:    rgba(255,255,255,.08);
+      --radius:    18px;
+      --maxw:      1120px;
+      --shadow:    0 20px 60px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 { font-family: 'Sora', sans-serif; line-height: 1.15; letter-spacing: -.02em; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+    section { padding: 96px 0; }
+
+    /* ---------- Botões ---------- */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 15px 28px; border-radius: 999px;
+      font-weight: 600; font-size: 1rem; cursor: pointer;
+      border: none; transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #0b1020; box-shadow: 0 10px 30px rgba(139,124,246,.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(139,124,246,.55); }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-ghost:hover { background: var(--bg-soft); }
+
+    /* ---------- Header ---------- */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(14,21,48,.7);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: 'Sora'; font-weight: 800; font-size: 1.2rem; }
+    .logo-dot { width: 30px; height: 30px; border-radius: 9px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display: grid; place-items: center; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { color: var(--text-dim); font-size: .95rem; font-weight: 500; transition: color .15s; }
+    .nav-links a:hover { color: var(--text); }
+    .menu-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.6rem; cursor: pointer; }
+
+    /* ---------- Hero ---------- */
+    .hero { position: relative; padding-top: 80px; }
+    .hero-glow {
+      position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(139,124,246,.25), transparent 60%);
+      pointer-events: none; z-index: 0;
+    }
+    .hero .container { position: relative; z-index: 1; text-align: center; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 16px; border-radius: 999px; font-size: .85rem; font-weight: 500;
+      background: var(--bg-soft); border: 1px solid var(--border); color: var(--text-dim); margin-bottom: 28px;
+    }
+    .hero h1 { font-size: clamp(2.3rem, 6vw, 4rem); max-width: 820px; margin: 0 auto 24px; }
+    .hero h1 .grad { background: linear-gradient(135deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero p.sub { font-size: 1.2rem; color: var(--text-dim); max-width: 600px; margin: 0 auto 38px; }
+    .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .trust { margin-top: 30px; color: var(--text-dim); font-size: .9rem; display: flex; gap: 8px; justify-content: center; align-items: center; flex-wrap: wrap; }
+    .stars { color: #ffd166; letter-spacing: 2px; }
+
+    /* ---------- Stats ---------- */
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 72px; }
+    .stat { text-align: center; padding: 28px 16px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); }
+    .stat .num { font-family: 'Sora'; font-size: 2.4rem; font-weight: 800; background: linear-gradient(135deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .stat .label { color: var(--text-dim); font-size: .95rem; margin-top: 4px; }
+
+    /* ---------- Seções genéricas ---------- */
+    .section-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+    .section-head .eyebrow { color: var(--accent); font-weight: 600; font-size: .9rem; text-transform: uppercase; letter-spacing: .1em; }
+    .section-head h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); margin: 12px 0 16px; }
+    .section-head p { color: var(--text-dim); font-size: 1.1rem; }
+
+    /* ---------- Features ---------- */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .feature {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 34px 28px; transition: transform .2s ease, border-color .2s ease;
+    }
+    .feature:hover { transform: translateY(-6px); border-color: rgba(139,124,246,.4); }
+    .feature .icon { width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center; font-size: 1.6rem; background: linear-gradient(135deg, rgba(139,124,246,.2), rgba(90,209,200,.2)); margin-bottom: 20px; }
+    .feature h3 { font-size: 1.25rem; margin-bottom: 10px; }
+    .feature p { color: var(--text-dim); }
+
+    /* ---------- Steps ---------- */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .step { position: relative; padding: 32px 26px; background: var(--bg-soft); border-radius: var(--radius); border: 1px solid var(--border); }
+    .step .n { font-family: 'Sora'; font-size: 3rem; font-weight: 800; opacity: .18; position: absolute; top: 12px; right: 22px; }
+    .step h3 { font-size: 1.2rem; margin-bottom: 8px; }
+    .step p { color: var(--text-dim); }
+
+    /* ---------- Depoimentos ---------- */
+    .grid-3.testi .feature p { font-style: italic; margin-bottom: 18px; }
+    .person { display: flex; align-items: center; gap: 12px; }
+    .avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display: grid; place-items: center; font-weight: 700; color: #0b1020; }
+    .person .pname { font-weight: 600; font-size: .95rem; }
+    .person .prole { color: var(--text-dim); font-size: .82rem; }
+
+    /* ---------- Pricing ---------- */
+    .pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+    .plan { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 30px; display: flex; flex-direction: column; }
+    .plan.featured { border-color: var(--accent); box-shadow: var(--shadow); position: relative; transform: scale(1.03); }
+    .plan.featured::before { content: "MAIS POPULAR"; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #0b1020; font-size: .72rem; font-weight: 700; padding: 5px 14px; border-radius: 999px; letter-spacing: .05em; }
+    .plan h3 { font-size: 1.3rem; margin-bottom: 6px; }
+    .plan .price { font-family: 'Sora'; font-size: 2.6rem; font-weight: 800; margin: 14px 0 4px; }
+    .plan .price small { font-size: 1rem; color: var(--text-dim); font-weight: 400; }
+    .plan ul { list-style: none; margin: 22px 0 28px; display: grid; gap: 12px; }
+    .plan li { color: var(--text-dim); display: flex; gap: 10px; }
+    .plan li::before { content: "✓"; color: var(--accent-2); font-weight: 700; }
+    .plan .btn { width: 100%; justify-content: center; margin-top: auto; }
+
+    /* ---------- FAQ ---------- */
+    .faq { max-width: 760px; margin: 0 auto; }
+    .faq-item { border: 1px solid var(--border); border-radius: 14px; margin-bottom: 14px; overflow: hidden; background: var(--card); }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; color: var(--text); font-size: 1.05rem; font-weight: 600; padding: 22px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter'; }
+    .faq-q .chev { transition: transform .25s; color: var(--accent); }
+    .faq-item.open .faq-q .chev { transform: rotate(180deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .faq-a p { padding: 0 24px 22px; color: var(--text-dim); }
+
+    /* ---------- CTA final ---------- */
+    .final-cta { text-align: center; background: linear-gradient(135deg, var(--bg-soft), var(--card)); border: 1px solid var(--border); border-radius: 28px; padding: 64px 32px; }
+    .final-cta h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 16px; }
+    .final-cta p { color: var(--text-dim); font-size: 1.15rem; max-width: 520px; margin: 0 auto 32px; }
+
+    /* ---------- Footer ---------- */
+    footer { border-top: 1px solid var(--border); padding: 48px 0 32px; }
+    .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .foot .logo { font-size: 1rem; }
+    .foot-links { display: flex; gap: 24px; }
+    .foot-links a { color: var(--text-dim); font-size: .9rem; }
+    .foot-links a:hover { color: var(--text); }
+    .copy { color: var(--text-dim); font-size: .82rem; margin-top: 28px; text-align: center; }
+
+    /* ---------- Reveal anim ---------- */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* ---------- Responsivo ---------- */
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .stats, .grid-3, .steps, .pricing { grid-template-columns: 1fr; }
+      .plan.featured { transform: none; }
+      section { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        <span class="logo-dot">🌙</span> RestaBem
+      </a>
+      <nav class="nav-links">
+        <a href="#beneficios">Benefícios</a>
+        <a href="#como">Como funciona</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">Dúvidas</a>
+      </nav>
+      <a href="#planos" class="btn btn-primary" style="padding:11px 22px">Começar agora</a>
+      <button class="menu-toggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="container">
+      <span class="badge">✨ Método 100% natural — sem remédios</span>
+      <h1>Volte a dormir <span class="grad">profundamente</span> a partir de hoje à noite</h1>
+      <p class="sub">Um programa simples e guiado para adormecer mais rápido, dormir sem acordar no meio da noite e acordar com energia de verdade.</p>
+      <div class="hero-cta">
+        <a href="#planos" class="btn btn-primary">Quero dormir melhor →</a>
+        <a href="#como" class="btn btn-ghost">Ver como funciona</a>
+      </div>
+      <div class="trust">
+        <span class="stars">★★★★★</span>
+        <span>Mais de 12.000 pessoas já dormem melhor</span>
+      </div>
+
+      <div class="stats reveal">
+        <div class="stat"><div class="num">93%</div><div class="label">adormecem em menos tempo</div></div>
+        <div class="stat"><div class="num">7h+</div><div class="label">de sono contínuo em média</div></div>
+        <div class="stat"><div class="num">14</div><div class="label">noites para sentir a diferença</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BENEFÍCIOS ============ -->
+  <section id="beneficios">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Por que funciona</span>
+        <h2>Tudo que você precisa para uma noite tranquila</h2>
+        <p>Técnicas baseadas em higiene do sono, respiração e rotina — sem dependência, sem efeitos colaterais.</p>
+      </div>
+      <div class="grid-3">
+        <div class="feature reveal"><div class="icon">😴</div><h3>Adormeça mais rápido</h3><p>Rotinas de relaxamento que desligam a mente e preparam o corpo para o sono em minutos.</p></div>
+        <div class="feature reveal"><div class="icon">🌊</div><h3>Sono sem interrupções</h3><p>Aprenda a manter o sono profundo a noite toda e a voltar a dormir caso acorde.</p></div>
+        <div class="feature reveal"><div class="icon">⚡</div><h3>Acorde com energia</h3><p>Desperte descansado e disposto, sem aquela sensação de cansaço logo cedo.</p></div>
+        <div class="feature reveal"><div class="icon">🧘</div><h3>Menos ansiedade</h3><p>Exercícios de respiração que reduzem a aceleração mental antes de dormir.</p></div>
+        <div class="feature reveal"><div class="icon">📱</div><h3>Acesso no celular</h3><p>Todo o programa na palma da mão, para seguir de onde estiver, no seu ritmo.</p></div>
+        <div class="feature reveal"><div class="icon">🔁</div><h3>Hábitos para a vida</h3><p>Mais que uma noite boa: uma rotina sustentável que dura para sempre.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA ============ -->
+  <section id="como" style="background:var(--bg-soft)">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Simples assim</span>
+        <h2>Seu sono melhor em 3 passos</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="n">1</span><h3>Faça o diagnóstico</h3><p>Responda algumas perguntas e descubra o que está atrapalhando o seu sono.</p></div>
+        <div class="step reveal"><span class="n">2</span><h3>Siga o plano guiado</h3><p>Receba uma rotina noturna personalizada, com áudios e exercícios curtos.</p></div>
+        <div class="step reveal"><span class="n">3</span><h3>Durma melhor todo dia</h3><p>Acompanhe sua evolução e ajuste o plano até virar hábito natural.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEPOIMENTOS ============ -->
+  <section id="depoimentos">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Histórias reais</span>
+        <h2>Quem testou, aprovou</h2>
+      </div>
+      <div class="grid-3 testi">
+        <div class="feature reveal">
+          <p>"Eu levava mais de uma hora pra pegar no sono. Em duas semanas isso virou cinco minutos. Mudou minha vida."</p>
+          <div class="person"><div class="avatar">MR</div><div><div class="pname">Marina R.</div><div class="prole">São Paulo, SP</div></div></div>
+        </div>
+        <div class="feature reveal">
+          <p>"Acordava 3, 4 vezes por noite. Hoje durmo a noite toda e acordo disposto. Recomendo demais."</p>
+          <div class="person"><div class="avatar">JC</div><div><div class="pname">João C.</div><div class="prole">Curitiba, PR</div></div></div>
+        </div>
+        <div class="feature reveal">
+          <p>"O melhor é não depender de remédio. As técnicas são simples e realmente funcionam no dia a dia."</p>
+          <div class="person"><div class="avatar">AL</div><div><div class="pname">Ana L.</div><div class="prole">Recife, PE</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PLANOS ============ -->
+  <section id="planos" style="background:var(--bg-soft)">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Planos</span>
+        <h2>Escolha o seu ponto de partida</h2>
+        <p>Garantia incondicional de 7 dias. Não funcionou? Devolvemos seu dinheiro.</p>
+      </div>
+      <div class="pricing">
+        <div class="plan reveal">
+          <h3>Essencial</h3>
+          <div class="price">R$ 0 <small>/ grátis</small></div>
+          <p style="color:var(--text-dim)">Para começar a sentir a diferença.</p>
+          <ul>
+            <li>Diagnóstico do sono</li>
+            <li>3 áudios de relaxamento</li>
+            <li>Guia de rotina noturna</li>
+          </ul>
+          <a href="#" class="btn btn-ghost" data-cta="essencial">Começar grátis</a>
+        </div>
+        <div class="plan featured reveal">
+          <h3>Completo</h3>
+          <div class="price">R$ 47 <small>/ único</small></div>
+          <p style="color:var(--text-dim)">Acesso total ao programa.</p>
+          <ul>
+            <li>Tudo do plano Essencial</li>
+            <li>Programa completo de 21 noites</li>
+            <li>Biblioteca de áudios e meditações</li>
+            <li>Acompanhamento de progresso</li>
+            <li>Acesso vitalício</li>
+          </ul>
+          <a href="#" class="btn btn-primary" data-cta="completo">Quero o completo</a>
+        </div>
+        <div class="plan reveal">
+          <h3>Premium</h3>
+          <div class="price">R$ 97 <small>/ único</small></div>
+          <p style="color:var(--text-dim)">Com acompanhamento de perto.</p>
+          <ul>
+            <li>Tudo do plano Completo</li>
+            <li>Consultoria individual de sono</li>
+            <li>Suporte prioritário no WhatsApp</li>
+            <li>Atualizações para sempre</li>
+          </ul>
+          <a href="#" class="btn btn-ghost" data-cta="premium">Quero o premium</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Dúvidas</span>
+        <h2>Perguntas frequentes</h2>
+      </div>
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-q">Preciso tomar algum remédio? <span class="chev">⌄</span></button>
+          <div class="faq-a"><p>Não. O programa é 100% natural, baseado em hábitos, respiração e higiene do sono. Nada de medicamentos.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Em quanto tempo vejo resultado? <span class="chev">⌄</span></button>
+          <div class="faq-a"><p>A maioria das pessoas sente diferença já nas primeiras noites. O programa completo é estruturado em 21 noites.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">E se não funcionar para mim? <span class="chev">⌄</span></button>
+          <div class="faq-a"><p>Você tem 7 dias de garantia incondicional. Se não gostar, devolvemos 100% do valor, sem perguntas.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Funciona no celular? <span class="chev">⌄</span></button>
+          <div class="faq-a"><p>Sim. Tudo foi pensado para o celular — você acessa de onde estiver, no seu ritmo.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section>
+    <div class="container">
+      <div class="final-cta reveal">
+        <h2>Sua melhor noite de sono começa hoje</h2>
+        <p>Pare de virar na cama e comece a acordar descansado. É natural, simples e tem garantia.</p>
+        <a href="#planos" class="btn btn-primary">Quero começar agora →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <a href="#" class="logo"><span class="logo-dot">🌙</span> RestaBem</a>
+        <div class="foot-links">
+          <a href="#beneficios">Benefícios</a>
+          <a href="#planos">Planos</a>
+          <a href="#faq">Dúvidas</a>
+          <a href="#">Contato</a>
+        </div>
+      </div>
+      <p class="copy">© <span id="year"></span> RestaBem. Template original — todos os direitos reservados ao licenciado.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Ano dinâmico
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(function (q) {
+      q.addEventListener('click', function () {
+        var item = q.parentElement;
+        var a = item.querySelector('.faq-a');
+        var isOpen = item.classList.toggle('open');
+        a.style.maxHeight = isOpen ? a.scrollHeight + 'px' : '0';
+      });
+    });
+
+    // Reveal on scroll
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+    // Menu mobile (scroll suave para os links)
+    document.querySelector('.menu-toggle').addEventListener('click', function () {
+      document.querySelector('#planos').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Hook de CTA — conecte aqui seu checkout (Hotmart, Stripe, etc.)
+    document.querySelectorAll('[data-cta]').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        var plano = btn.getAttribute('data-cta');
+        // Exemplo: window.location.href = 'https://seu-checkout.com/' + plano;
+        console.log('CTA clicado:', plano);
+      });
+    });
+  </script>
+</body>
+</html>
