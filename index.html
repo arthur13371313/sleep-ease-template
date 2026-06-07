@@ -21,14 +21,14 @@
        Tema configurável: edite as variáveis abaixo.
        ========================================================= */
     :root {
-      --bg:        #0e1530;
-      --bg-soft:   #16204a;
-      --card:      #1b2856;
-      --accent:    #8b7cf6;
-      --accent-2:  #5ad1c8;
-      --text:      #eef1ff;
-      --text-dim:  #aeb6da;
-      --border:    rgba(255,255,255,.08);
+      --bg:        #17120d;
+      --bg-soft:   #221a12;
+      --card:      #2a2017;
+      --accent:    #e0b15a;
+      --accent-2:  #f3d291;
+      --text:      #f7efe3;
+      --text-dim:  #c8b8a1;
+      --border:    rgba(255,255,255,.09);
       --radius:    18px;
       --maxw:      1120px;
       --shadow:    0 20px 60px rgba(0,0,0,.35);
@@ -58,9 +58,9 @@
     }
     .btn-primary {
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #0b1020; box-shadow: 0 10px 30px rgba(139,124,246,.4);
+      color: #0b1020; box-shadow: 0 10px 30px rgba(224,177,90,.4);
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(139,124,246,.55); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(224,177,90,.55); }
     .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
     .btn-ghost:hover { background: var(--bg-soft); }
 
@@ -84,7 +84,7 @@
     .hero-glow {
       position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
       width: 700px; height: 700px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(139,124,246,.25), transparent 60%);
+      background: radial-gradient(circle, rgba(224,177,90,.25), transparent 60%);
       pointer-events: none; z-index: 0;
     }
     .hero .container { position: relative; z-index: 1; text-align: center; }
@@ -118,8 +118,8 @@
       background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
       padding: 34px 28px; transition: transform .2s ease, border-color .2s ease;
     }
-    .feature:hover { transform: translateY(-6px); border-color: rgba(139,124,246,.4); }
-    .feature .icon { width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center; font-size: 1.6rem; background: linear-gradient(135deg, rgba(139,124,246,.2), rgba(90,209,200,.2)); margin-bottom: 20px; }
+    .feature:hover { transform: translateY(-6px); border-color: rgba(224,177,90,.4); }
+    .feature .icon { width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center; font-size: 1.6rem; background: linear-gradient(135deg, rgba(224,177,90,.2), rgba(243,210,145,.2)); margin-bottom: 20px; }
     .feature h3 { font-size: 1.25rem; margin-bottom: 10px; }
     .feature p { color: var(--text-dim); }
 
@@ -224,11 +224,11 @@
   <section class="hero">
     <div class="hero-glow"></div>
     <div class="container">
-      <span class="badge">📖 Guia prático e natural — sem remédios</span>
-      <h1>Acabe com as <span class="grad">cãibras e dores</span> que tiram o seu sono toda noite</h1>
-      <p class="sub">Um guia passo a passo para aliviar cãibras na perna, dor nas costas e dores nas pernas — para você finalmente deitar, relaxar e dormir a noite inteira sem acordar de dor.</p>
+      <span class="badge">🌙 Você não está sozinha — isso tem nome</span>
+      <h1>Essa <span class="grad">sensação nas pernas</span> à noite tem nome</h1>
+      <p class="sub">Aquele formigamento, peso ou cãibra que aparece bem na hora de dormir tem explicação — e tem como aliviar. Descubra o que está acontecendo com o seu corpo e a rotina simples que ajuda você a dormir a noite toda.</p>
       <div class="hero-cta">
-        <a href="#oferta" class="btn btn-primary">Quero dormir sem dor →</a>
+        <a href="#dores" class="btn btn-primary">Quero entender →</a>
         <a href="#guia" class="btn btn-ghost">Ver o que tem no guia</a>
       </div>
       <div class="trust">
@@ -249,8 +249,8 @@
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Você se reconhece?</span>
-        <h2>Se essas dores não te deixam dormir, esse guia é pra você</h2>
-        <p>Toda noite a mesma luta. O corpo pede descanso, mas a dor não deixa.</p>
+        <h2>Esse incômodo nas pernas à noite é mais comum do que você imagina</h2>
+        <p>Cãibras, formigamento, peso, aquela vontade de mexer a perna o tempo todo... toda noite a mesma luta. O corpo pede descanso, mas o desconforto não deixa.</p>
       </div>
       <div class="pains">
         <div class="pain reveal"><span class="x">✕</span><p><strong>Cãibras na perna</strong> que te acordam de madrugada e fazem você pular da cama.</p></div>
