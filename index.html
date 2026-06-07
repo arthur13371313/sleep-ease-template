@@ -26,14 +26,14 @@
        Tema configurável: edite as variáveis abaixo.
        ========================================================= */
     :root {
-      --bg:        #17120d;
-      --bg-soft:   #221a12;
-      --card:      #2a2017;
-      --accent:    #e0b15a;
-      --accent-2:  #f3d291;
-      --text:      #f7efe3;
-      --text-dim:  #c8b8a1;
-      --border:    rgba(255,255,255,.09);
+      --bg:        #0e1530;
+      --bg-soft:   #16204a;
+      --card:      #1b2856;
+      --accent:    #8b7cf6;
+      --accent-2:  #5ad1c8;
+      --text:      #eef1ff;
+      --text-dim:  #aeb6da;
+      --border:    rgba(255,255,255,.08);
       --radius:    18px;
       --maxw:      1120px;
       --shadow:    0 20px 60px rgba(0,0,0,.35);
@@ -63,9 +63,9 @@
     }
     .btn-primary {
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #0b1020; box-shadow: 0 10px 30px rgba(224,177,90,.4);
+      color: #0b1020; box-shadow: 0 10px 30px rgba(139,124,246,.4);
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(224,177,90,.55); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(139,124,246,.55); }
     .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
     .btn-ghost:hover { background: var(--bg-soft); }
 
@@ -89,7 +89,7 @@
     .hero-glow {
       position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
       width: 700px; height: 700px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(224,177,90,.25), transparent 60%);
+      background: radial-gradient(circle, rgba(139,124,246,.25), transparent 60%);
       pointer-events: none; z-index: 0;
     }
     .hero .container { position: relative; z-index: 1; text-align: center; }
@@ -123,8 +123,8 @@
       background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
       padding: 34px 28px; transition: transform .2s ease, border-color .2s ease;
     }
-    .feature:hover { transform: translateY(-6px); border-color: rgba(224,177,90,.4); }
-    .feature .icon { width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center; font-size: 1.6rem; background: linear-gradient(135deg, rgba(224,177,90,.2), rgba(243,210,145,.2)); margin-bottom: 20px; }
+    .feature:hover { transform: translateY(-6px); border-color: rgba(139,124,246,.4); }
+    .feature .icon { width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center; font-size: 1.6rem; background: linear-gradient(135deg, rgba(139,124,246,.2), rgba(90,209,200,.2)); margin-bottom: 20px; }
     .feature h3 { font-size: 1.25rem; margin-bottom: 10px; }
     .feature p { color: var(--text-dim); }
 
