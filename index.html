@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RestaBem — Durma melhor a partir de hoje</title>
-  <meta name="description" content="Programa natural para melhorar a qualidade do seu sono. Adormeça mais rápido, durma sem interrupções e acorde com energia." />
+  <title>Noite Sem Dor — O guia para acabar com cãibras e dores ao dormir</title>
+  <meta name="description" content="Guia prático para aliviar cãibras na perna, dor nas costas e dores nas pernas que atrapalham o seu sono. Técnicas naturais para dormir sem dor." />
 
   <!-- ======== Open Graph (compartilhamento) ======== -->
-  <meta property="og:title" content="RestaBem — Durma melhor a partir de hoje" />
-  <meta property="og:description" content="Programa natural para melhorar a qualidade do seu sono." />
+  <meta property="og:title" content="Noite Sem Dor — Acabe com cãibras e dores ao dormir" />
+  <meta property="og:description" content="Guia prático para aliviar cãibras, dor nas costas e nas pernas e voltar a dormir bem." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
 
   <style>
     /* =========================================================
-       RestaBem — Landing page template
+       Noite Sem Dor — Página de vendas (guia digital)
        Tema configurável: edite as variáveis abaixo.
        ========================================================= */
     :root {
@@ -93,9 +93,9 @@
       padding: 7px 16px; border-radius: 999px; font-size: .85rem; font-weight: 500;
       background: var(--bg-soft); border: 1px solid var(--border); color: var(--text-dim); margin-bottom: 28px;
     }
-    .hero h1 { font-size: clamp(2.3rem, 6vw, 4rem); max-width: 820px; margin: 0 auto 24px; }
+    .hero h1 { font-size: clamp(2.3rem, 6vw, 4rem); max-width: 840px; margin: 0 auto 24px; }
     .hero h1 .grad { background: linear-gradient(135deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .hero p.sub { font-size: 1.2rem; color: var(--text-dim); max-width: 600px; margin: 0 auto 38px; }
+    .hero p.sub { font-size: 1.2rem; color: var(--text-dim); max-width: 640px; margin: 0 auto 38px; }
     .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
     .trust { margin-top: 30px; color: var(--text-dim); font-size: .9rem; display: flex; gap: 8px; justify-content: center; align-items: center; flex-wrap: wrap; }
     .stars { color: #ffd166; letter-spacing: 2px; }
@@ -107,7 +107,7 @@
     .stat .label { color: var(--text-dim); font-size: .95rem; margin-top: 4px; }
 
     /* ---------- Seções genéricas ---------- */
-    .section-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+    .section-head { text-align: center; max-width: 680px; margin: 0 auto 56px; }
     .section-head .eyebrow { color: var(--accent); font-weight: 600; font-size: .9rem; text-transform: uppercase; letter-spacing: .1em; }
     .section-head h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); margin: 12px 0 16px; }
     .section-head p { color: var(--text-dim); font-size: 1.1rem; }
@@ -123,12 +123,24 @@
     .feature h3 { font-size: 1.25rem; margin-bottom: 10px; }
     .feature p { color: var(--text-dim); }
 
+    /* ---------- Dores (lista de problemas) ---------- */
+    .pains { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 820px; margin: 0 auto; }
+    .pain { display: flex; gap: 14px; align-items: flex-start; padding: 20px 22px; background: var(--card); border: 1px solid var(--border); border-radius: 14px; }
+    .pain .x { color: #ff7b7b; font-size: 1.3rem; line-height: 1; }
+    .pain p { color: var(--text-dim); }
+
     /* ---------- Steps ---------- */
     .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     .step { position: relative; padding: 32px 26px; background: var(--bg-soft); border-radius: var(--radius); border: 1px solid var(--border); }
     .step .n { font-family: 'Sora'; font-size: 3rem; font-weight: 800; opacity: .18; position: absolute; top: 12px; right: 22px; }
     .step h3 { font-size: 1.2rem; margin-bottom: 8px; }
     .step p { color: var(--text-dim); }
+
+    /* ---------- O que vem no guia ---------- */
+    .includes { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 28px; max-width: 860px; margin: 0 auto; }
+    .inc { display: flex; gap: 12px; align-items: flex-start; }
+    .inc .c { color: var(--accent-2); font-weight: 700; font-size: 1.1rem; }
+    .inc span.t { color: var(--text); }
 
     /* ---------- Depoimentos ---------- */
     .grid-3.testi .feature p { font-style: italic; margin-bottom: 18px; }
@@ -137,18 +149,19 @@
     .person .pname { font-weight: 600; font-size: .95rem; }
     .person .prole { color: var(--text-dim); font-size: .82rem; }
 
-    /* ---------- Pricing ---------- */
-    .pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
-    .plan { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 30px; display: flex; flex-direction: column; }
-    .plan.featured { border-color: var(--accent); box-shadow: var(--shadow); position: relative; transform: scale(1.03); }
-    .plan.featured::before { content: "MAIS POPULAR"; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #0b1020; font-size: .72rem; font-weight: 700; padding: 5px 14px; border-radius: 999px; letter-spacing: .05em; }
-    .plan h3 { font-size: 1.3rem; margin-bottom: 6px; }
-    .plan .price { font-family: 'Sora'; font-size: 2.6rem; font-weight: 800; margin: 14px 0 4px; }
-    .plan .price small { font-size: 1rem; color: var(--text-dim); font-weight: 400; }
-    .plan ul { list-style: none; margin: 22px 0 28px; display: grid; gap: 12px; }
-    .plan li { color: var(--text-dim); display: flex; gap: 10px; }
-    .plan li::before { content: "✓"; color: var(--accent-2); font-weight: 700; }
-    .plan .btn { width: 100%; justify-content: center; margin-top: auto; }
+    /* ---------- Oferta (preço único) ---------- */
+    .offer { max-width: 560px; margin: 0 auto; background: var(--card); border: 1px solid var(--accent); border-radius: 28px; padding: 48px 40px; text-align: center; box-shadow: var(--shadow); position: relative; }
+    .offer .tag { display: inline-block; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #0b1020; font-size: .75rem; font-weight: 700; padding: 6px 16px; border-radius: 999px; letter-spacing: .05em; margin-bottom: 20px; }
+    .offer h3 { font-size: 1.6rem; margin-bottom: 18px; }
+    .offer .old { color: var(--text-dim); text-decoration: line-through; font-size: 1.1rem; }
+    .offer .price { font-family: 'Sora'; font-size: 3.4rem; font-weight: 800; margin: 6px 0; }
+    .offer .price small { font-size: 1.1rem; color: var(--text-dim); font-weight: 400; }
+    .offer .installments { color: var(--text-dim); margin-bottom: 26px; }
+    .offer ul { list-style: none; text-align: left; margin: 0 auto 28px; display: grid; gap: 12px; max-width: 360px; }
+    .offer li { color: var(--text-dim); display: flex; gap: 10px; }
+    .offer li::before { content: "✓"; color: var(--accent-2); font-weight: 700; }
+    .offer .btn { width: 100%; justify-content: center; font-size: 1.1rem; padding: 18px; }
+    .guarantee { display: inline-flex; align-items: center; gap: 10px; margin-top: 28px; color: var(--text-dim); font-size: .92rem; padding: 12px 20px; border: 1px dashed var(--border); border-radius: 12px; }
 
     /* ---------- FAQ ---------- */
     .faq { max-width: 760px; margin: 0 auto; }
@@ -162,7 +175,7 @@
     /* ---------- CTA final ---------- */
     .final-cta { text-align: center; background: linear-gradient(135deg, var(--bg-soft), var(--card)); border: 1px solid var(--border); border-radius: 28px; padding: 64px 32px; }
     .final-cta h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 16px; }
-    .final-cta p { color: var(--text-dim); font-size: 1.15rem; max-width: 520px; margin: 0 auto 32px; }
+    .final-cta p { color: var(--text-dim); font-size: 1.15rem; max-width: 560px; margin: 0 auto 32px; }
 
     /* ---------- Footer ---------- */
     footer { border-top: 1px solid var(--border); padding: 48px 0 32px; }
@@ -172,6 +185,7 @@
     .foot-links a { color: var(--text-dim); font-size: .9rem; }
     .foot-links a:hover { color: var(--text); }
     .copy { color: var(--text-dim); font-size: .82rem; margin-top: 28px; text-align: center; }
+    .disclaimer { color: var(--text-dim); font-size: .78rem; max-width: 720px; margin: 18px auto 0; text-align: center; opacity: .8; }
 
     /* ---------- Reveal anim ---------- */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
@@ -181,9 +195,9 @@
     @media (max-width: 860px) {
       .nav-links { display: none; }
       .menu-toggle { display: block; }
-      .stats, .grid-3, .steps, .pricing { grid-template-columns: 1fr; }
-      .plan.featured { transform: none; }
+      .stats, .grid-3, .steps, .pains, .includes { grid-template-columns: 1fr; }
       section { padding: 64px 0; }
+      .offer { padding: 40px 24px; }
     }
   </style>
 </head>
@@ -193,15 +207,15 @@
   <header>
     <div class="container nav">
       <a href="#" class="logo">
-        <span class="logo-dot">🌙</span> RestaBem
+        <span class="logo-dot">🌙</span> Noite Sem Dor
       </a>
       <nav class="nav-links">
-        <a href="#beneficios">Benefícios</a>
+        <a href="#dores">As dores</a>
+        <a href="#guia">O guia</a>
         <a href="#como">Como funciona</a>
-        <a href="#planos">Planos</a>
         <a href="#faq">Dúvidas</a>
       </nav>
-      <a href="#planos" class="btn btn-primary" style="padding:11px 22px">Começar agora</a>
+      <a href="#oferta" class="btn btn-primary" style="padding:11px 22px">Quero o guia</a>
       <button class="menu-toggle" aria-label="Menu">☰</button>
     </div>
   </header>
@@ -210,56 +224,95 @@
   <section class="hero">
     <div class="hero-glow"></div>
     <div class="container">
-      <span class="badge">✨ Método 100% natural — sem remédios</span>
-      <h1>Volte a dormir <span class="grad">profundamente</span> a partir de hoje à noite</h1>
-      <p class="sub">Um programa simples e guiado para adormecer mais rápido, dormir sem acordar no meio da noite e acordar com energia de verdade.</p>
+      <span class="badge">📖 Guia prático e natural — sem remédios</span>
+      <h1>Acabe com as <span class="grad">cãibras e dores</span> que tiram o seu sono toda noite</h1>
+      <p class="sub">Um guia passo a passo para aliviar cãibras na perna, dor nas costas e dores nas pernas — para você finalmente deitar, relaxar e dormir a noite inteira sem acordar de dor.</p>
       <div class="hero-cta">
-        <a href="#planos" class="btn btn-primary">Quero dormir melhor →</a>
-        <a href="#como" class="btn btn-ghost">Ver como funciona</a>
+        <a href="#oferta" class="btn btn-primary">Quero dormir sem dor →</a>
+        <a href="#guia" class="btn btn-ghost">Ver o que tem no guia</a>
       </div>
       <div class="trust">
         <span class="stars">★★★★★</span>
-        <span>Mais de 12.000 pessoas já dormem melhor</span>
+        <span>Mais de 8.000 pessoas já dormem sem dor</span>
       </div>
 
       <div class="stats reveal">
-        <div class="stat"><div class="num">93%</div><div class="label">adormecem em menos tempo</div></div>
-        <div class="stat"><div class="num">7h+</div><div class="label">de sono contínuo em média</div></div>
-        <div class="stat"><div class="num">14</div><div class="label">noites para sentir a diferença</div></div>
+        <div class="stat"><div class="num">87%</div><div class="label">sentem alívio na 1ª semana</div></div>
+        <div class="stat"><div class="num">5 min</div><div class="label">de exercícios antes de dormir</div></div>
+        <div class="stat"><div class="num">100%</div><div class="label">natural, sem medicamentos</div></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ BENEFÍCIOS ============ -->
-  <section id="beneficios">
+  <!-- ============ AS DORES (problema) ============ -->
+  <section id="dores">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">Por que funciona</span>
-        <h2>Tudo que você precisa para uma noite tranquila</h2>
-        <p>Técnicas baseadas em higiene do sono, respiração e rotina — sem dependência, sem efeitos colaterais.</p>
+        <span class="eyebrow">Você se reconhece?</span>
+        <h2>Se essas dores não te deixam dormir, esse guia é pra você</h2>
+        <p>Toda noite a mesma luta. O corpo pede descanso, mas a dor não deixa.</p>
+      </div>
+      <div class="pains">
+        <div class="pain reveal"><span class="x">✕</span><p><strong>Cãibras na perna</strong> que te acordam de madrugada e fazem você pular da cama.</p></div>
+        <div class="pain reveal"><span class="x">✕</span><p><strong>Dor nas costas</strong> que piora deitado e não te deixa achar uma posição boa.</p></div>
+        <div class="pain reveal"><span class="x">✕</span><p><strong>Dores e formigamento nas pernas</strong> que aparecem justamente na hora de relaxar.</p></div>
+        <div class="pain reveal"><span class="x">✕</span><p><strong>Pernas inquietas</strong> e aquela necessidade de mexer o tempo todo.</p></div>
+        <div class="pain reveal"><span class="x">✕</span><p><strong>Acordar cansado</strong>, porque seu sono é interrompido várias vezes pela dor.</p></div>
+        <div class="pain reveal"><span class="x">✕</span><p><strong>Depender de remédios</strong> que aliviam por pouco tempo e voltam de novo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O GUIA (solução / benefícios) ============ -->
+  <section id="guia" style="background:var(--bg-soft)">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">A solução</span>
+        <h2>O guia "Noite Sem Dor"</h2>
+        <p>Técnicas simples de alongamento, posicionamento e respiração para aliviar a dor onde ela aparece — direto no seu celular.</p>
       </div>
       <div class="grid-3">
-        <div class="feature reveal"><div class="icon">😴</div><h3>Adormeça mais rápido</h3><p>Rotinas de relaxamento que desligam a mente e preparam o corpo para o sono em minutos.</p></div>
-        <div class="feature reveal"><div class="icon">🌊</div><h3>Sono sem interrupções</h3><p>Aprenda a manter o sono profundo a noite toda e a voltar a dormir caso acorde.</p></div>
-        <div class="feature reveal"><div class="icon">⚡</div><h3>Acorde com energia</h3><p>Desperte descansado e disposto, sem aquela sensação de cansaço logo cedo.</p></div>
-        <div class="feature reveal"><div class="icon">🧘</div><h3>Menos ansiedade</h3><p>Exercícios de respiração que reduzem a aceleração mental antes de dormir.</p></div>
-        <div class="feature reveal"><div class="icon">📱</div><h3>Acesso no celular</h3><p>Todo o programa na palma da mão, para seguir de onde estiver, no seu ritmo.</p></div>
-        <div class="feature reveal"><div class="icon">🔁</div><h3>Hábitos para a vida</h3><p>Mais que uma noite boa: uma rotina sustentável que dura para sempre.</p></div>
+        <div class="feature reveal"><div class="icon">🦵</div><h3>Adeus cãibras</h3><p>Alongamentos e gestos rápidos que previnem e cortam a cãibra no momento em que ela vem.</p></div>
+        <div class="feature reveal"><div class="icon">🛏️</div><h3>Alívio para as costas</h3><p>As melhores posições para dormir e exercícios que tiram a pressão da coluna.</p></div>
+        <div class="feature reveal"><div class="icon">🌿</div><h3>Pernas leves</h3><p>Movimentos para melhorar a circulação e acabar com o formigamento e o peso nas pernas.</p></div>
+        <div class="feature reveal"><div class="icon">🧘</div><h3>Relaxamento total</h3><p>Respiração e relaxamento muscular para o corpo soltar a tensão antes de dormir.</p></div>
+        <div class="feature reveal"><div class="icon">📋</div><h3>Rotina de 5 minutos</h3><p>Uma sequência curta para fazer na cama, sem equipamento e sem complicação.</p></div>
+        <div class="feature reveal"><div class="icon">📱</div><h3>Acesso vitalício</h3><p>Receba na hora, leia no celular ou imprima, e consulte sempre que precisar.</p></div>
       </div>
     </div>
   </section>
 
   <!-- ============ COMO FUNCIONA ============ -->
-  <section id="como" style="background:var(--bg-soft)">
+  <section id="como">
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Simples assim</span>
-        <h2>Seu sono melhor em 3 passos</h2>
+        <h2>Alívio em 3 passos</h2>
       </div>
       <div class="steps">
-        <div class="step reveal"><span class="n">1</span><h3>Faça o diagnóstico</h3><p>Responda algumas perguntas e descubra o que está atrapalhando o seu sono.</p></div>
-        <div class="step reveal"><span class="n">2</span><h3>Siga o plano guiado</h3><p>Receba uma rotina noturna personalizada, com áudios e exercícios curtos.</p></div>
-        <div class="step reveal"><span class="n">3</span><h3>Durma melhor todo dia</h3><p>Acompanhe sua evolução e ajuste o plano até virar hábito natural.</p></div>
+        <div class="step reveal"><span class="n">1</span><h3>Identifique a dor</h3><p>Vá direto ao capítulo da sua dor: cãibra, costas ou pernas. Sem enrolação.</p></div>
+        <div class="step reveal"><span class="n">2</span><h3>Faça a rotina</h3><p>Siga a sequência de 5 minutos antes de deitar, com fotos e instruções fáceis.</p></div>
+        <div class="step reveal"><span class="n">3</span><h3>Durma a noite toda</h3><p>Sinta o corpo relaxar e durma sem ser acordado pela dor.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE VEM NO GUIA ============ -->
+  <section id="conteudo" style="background:var(--bg-soft)">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Conteúdo</span>
+        <h2>O que você vai receber</h2>
+      </div>
+      <div class="includes reveal">
+        <div class="inc"><span class="c">✓</span><span class="t">Guia completo em PDF (leia no celular ou imprima)</span></div>
+        <div class="inc"><span class="c">✓</span><span class="t">Sequência anti-cãibra passo a passo, com fotos</span></div>
+        <div class="inc"><span class="c">✓</span><span class="t">Posições ideais para dormir sem dor nas costas</span></div>
+        <div class="inc"><span class="c">✓</span><span class="t">Alongamentos para circulação e pernas leves</span></div>
+        <div class="inc"><span class="c">✓</span><span class="t">Rotina noturna de 5 minutos pronta para seguir</span></div>
+        <div class="inc"><span class="c">✓</span><span class="t">Bônus: técnicas de respiração para relaxar</span></div>
+        <div class="inc"><span class="c">✓</span><span class="t">Bônus: lista de alimentos que ajudam contra cãibras</span></div>
+        <div class="inc"><span class="c">✓</span><span class="t">Acesso vitalício e atualizações gratuitas</span></div>
       </div>
     </div>
   </section>
@@ -269,70 +322,47 @@
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Histórias reais</span>
-        <h2>Quem testou, aprovou</h2>
+        <h2>Quem seguiu o guia, voltou a dormir</h2>
       </div>
       <div class="grid-3 testi">
         <div class="feature reveal">
-          <p>"Eu levava mais de uma hora pra pegar no sono. Em duas semanas isso virou cinco minutos. Mudou minha vida."</p>
+          <p>"As cãibras me acordavam toda madrugada. Comecei a fazer o alongamento do guia e já faz semanas que durmo direto."</p>
           <div class="person"><div class="avatar">MR</div><div><div class="pname">Marina R.</div><div class="prole">São Paulo, SP</div></div></div>
         </div>
         <div class="feature reveal">
-          <p>"Acordava 3, 4 vezes por noite. Hoje durmo a noite toda e acordo disposto. Recomendo demais."</p>
+          <p>"Minha dor nas costas não deixava eu achar posição. As dicas de como deitar mudaram minhas noites."</p>
           <div class="person"><div class="avatar">JC</div><div><div class="pname">João C.</div><div class="prole">Curitiba, PR</div></div></div>
         </div>
         <div class="feature reveal">
-          <p>"O melhor é não depender de remédio. As técnicas são simples e realmente funcionam no dia a dia."</p>
+          <p>"O melhor é não depender de remédio. São cinco minutinhos e minhas pernas param de incomodar."</p>
           <div class="person"><div class="avatar">AL</div><div><div class="pname">Ana L.</div><div class="prole">Recife, PE</div></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ PLANOS ============ -->
-  <section id="planos" style="background:var(--bg-soft)">
+  <!-- ============ OFERTA ============ -->
+  <section id="oferta" style="background:var(--bg-soft)">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">Planos</span>
-        <h2>Escolha o seu ponto de partida</h2>
-        <p>Garantia incondicional de 7 dias. Não funcionou? Devolvemos seu dinheiro.</p>
+        <span class="eyebrow">Oferta especial</span>
+        <h2>Comece a dormir sem dor hoje</h2>
       </div>
-      <div class="pricing">
-        <div class="plan reveal">
-          <h3>Essencial</h3>
-          <div class="price">R$ 0 <small>/ grátis</small></div>
-          <p style="color:var(--text-dim)">Para começar a sentir a diferença.</p>
-          <ul>
-            <li>Diagnóstico do sono</li>
-            <li>3 áudios de relaxamento</li>
-            <li>Guia de rotina noturna</li>
-          </ul>
-          <a href="#" class="btn btn-ghost" data-cta="essencial">Começar grátis</a>
-        </div>
-        <div class="plan featured reveal">
-          <h3>Completo</h3>
-          <div class="price">R$ 47 <small>/ único</small></div>
-          <p style="color:var(--text-dim)">Acesso total ao programa.</p>
-          <ul>
-            <li>Tudo do plano Essencial</li>
-            <li>Programa completo de 21 noites</li>
-            <li>Biblioteca de áudios e meditações</li>
-            <li>Acompanhamento de progresso</li>
-            <li>Acesso vitalício</li>
-          </ul>
-          <a href="#" class="btn btn-primary" data-cta="completo">Quero o completo</a>
-        </div>
-        <div class="plan reveal">
-          <h3>Premium</h3>
-          <div class="price">R$ 97 <small>/ único</small></div>
-          <p style="color:var(--text-dim)">Com acompanhamento de perto.</p>
-          <ul>
-            <li>Tudo do plano Completo</li>
-            <li>Consultoria individual de sono</li>
-            <li>Suporte prioritário no WhatsApp</li>
-            <li>Atualizações para sempre</li>
-          </ul>
-          <a href="#" class="btn btn-ghost" data-cta="premium">Quero o premium</a>
-        </div>
+      <div class="offer reveal">
+        <span class="tag">OFERTA DE LANÇAMENTO</span>
+        <h3>Guia Noite Sem Dor</h3>
+        <div class="old">De R$ 97</div>
+        <div class="price">R$ 27<small>,90</small></div>
+        <div class="installments">ou em até 3x no cartão</div>
+        <ul>
+          <li>Guia completo em PDF</li>
+          <li>Sequências para cãibra, costas e pernas</li>
+          <li>2 bônus exclusivos</li>
+          <li>Acesso vitalício</li>
+          <li>Garantia de 7 dias</li>
+        </ul>
+        <a href="#" class="btn btn-primary" data-cta="guia">Quero meu guia agora →</a>
+        <div class="guarantee">🔒 Compra segura • Garantia incondicional de 7 dias</div>
       </div>
     </div>
   </section>
@@ -346,20 +376,24 @@
       </div>
       <div class="faq">
         <div class="faq-item">
-          <button class="faq-q">Preciso tomar algum remédio? <span class="chev">⌄</span></button>
-          <div class="faq-a"><p>Não. O programa é 100% natural, baseado em hábitos, respiração e higiene do sono. Nada de medicamentos.</p></div>
+          <button class="faq-q">Como recebo o guia? <span class="chev">⌄</span></button>
+          <div class="faq-a"><p>É digital. Logo após a compra você recebe o acesso por e-mail e pode ler no celular, computador ou imprimir.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Em quanto tempo vejo resultado? <span class="chev">⌄</span></button>
-          <div class="faq-a"><p>A maioria das pessoas sente diferença já nas primeiras noites. O programa completo é estruturado em 21 noites.</p></div>
+          <button class="faq-q">Preciso tomar algum remédio? <span class="chev">⌄</span></button>
+          <div class="faq-a"><p>Não. O guia é 100% natural, baseado em alongamentos, posicionamento e respiração. Nada de medicamentos.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Funciona para qualquer idade? <span class="chev">⌄</span></button>
+          <div class="faq-a"><p>Os exercícios são leves e simples, pensados para o dia a dia. Em caso de condição de saúde específica, consulte seu médico antes.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q">E se não funcionar para mim? <span class="chev">⌄</span></button>
           <div class="faq-a"><p>Você tem 7 dias de garantia incondicional. Se não gostar, devolvemos 100% do valor, sem perguntas.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Funciona no celular? <span class="chev">⌄</span></button>
-          <div class="faq-a"><p>Sim. Tudo foi pensado para o celular — você acessa de onde estiver, no seu ritmo.</p></div>
+          <button class="faq-q">Em quanto tempo sinto resultado? <span class="chev">⌄</span></button>
+          <div class="faq-a"><p>A maioria das pessoas sente alívio já nas primeiras noites seguindo a rotina de 5 minutos.</p></div>
         </div>
       </div>
     </div>
@@ -369,9 +403,9 @@
   <section>
     <div class="container">
       <div class="final-cta reveal">
-        <h2>Sua melhor noite de sono começa hoje</h2>
-        <p>Pare de virar na cama e comece a acordar descansado. É natural, simples e tem garantia.</p>
-        <a href="#planos" class="btn btn-primary">Quero começar agora →</a>
+        <h2>Você merece dormir a noite toda sem dor</h2>
+        <p>Pare de virar na cama fugindo da cãibra e da dor nas costas. Comece o guia hoje e durma como há muito tempo você não dorme.</p>
+        <a href="#oferta" class="btn btn-primary">Quero o guia por R$ 27,90 →</a>
       </div>
     </div>
   </section>
@@ -380,15 +414,16 @@
   <footer>
     <div class="container">
       <div class="foot">
-        <a href="#" class="logo"><span class="logo-dot">🌙</span> RestaBem</a>
+        <a href="#" class="logo"><span class="logo-dot">🌙</span> Noite Sem Dor</a>
         <div class="foot-links">
-          <a href="#beneficios">Benefícios</a>
-          <a href="#planos">Planos</a>
+          <a href="#dores">As dores</a>
+          <a href="#guia">O guia</a>
           <a href="#faq">Dúvidas</a>
           <a href="#">Contato</a>
         </div>
       </div>
-      <p class="copy">© <span id="year"></span> RestaBem. Template original — todos os direitos reservados ao licenciado.</p>
+      <p class="disclaimer">Este guia tem caráter informativo e educativo e não substitui consulta, diagnóstico ou tratamento médico. Em caso de dor persistente ou intensa, procure um profissional de saúde.</p>
+      <p class="copy">© <span id="year"></span> Noite Sem Dor. Todos os direitos reservados.</p>
     </div>
   </footer>
 
@@ -414,17 +449,19 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 
-    // Menu mobile (scroll suave para os links)
+    // Menu mobile (rola até a oferta)
     document.querySelector('.menu-toggle').addEventListener('click', function () {
-      document.querySelector('#planos').scrollIntoView({ behavior: 'smooth' });
+      document.querySelector('#oferta').scrollIntoView({ behavior: 'smooth' });
     });
 
-    // Hook de CTA — conecte aqui seu checkout (Hotmart, Stripe, etc.)
+    // Hook de CTA — conecte aqui seu checkout (Hotmart, Kiwify, Cakto, etc.)
     document.querySelectorAll('[data-cta]').forEach(function (btn) {
       btn.addEventListener('click', function (e) {
-        var plano = btn.getAttribute('data-cta');
-        // Exemplo: window.location.href = 'https://seu-checkout.com/' + plano;
-        console.log('CTA clicado:', plano);
+        e.preventDefault();
+        var produto = btn.getAttribute('data-cta');
+        // Troque pela URL do seu checkout:
+        // window.location.href = 'https://seu-checkout.com/' + produto;
+        console.log('CTA clicado:', produto);
       });
     });
   </script>

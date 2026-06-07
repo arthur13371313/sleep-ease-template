@@ -1,67 +1,59 @@
-# 🌙 RestaBem — Template de Landing Page de Sono
+# 🌙 Noite Sem Dor — Página de Vendas
 
-Landing page **original**, responsiva e pronta para converter, ideal para produtos de sono, bem-estar, meditação, cursos e infoprodutos. Arquivo único em HTML/CSS/JS puro — **sem build, sem dependências, sem framework**.
+Página de vendas (landing page) **original** para vender um **guia digital** que ajuda a aliviar as dores que atrapalham o sono: **cãibra na perna, dor nas costas e dores nas pernas**.
+
+Arquivo único em HTML/CSS/JS puro — **sem build, sem dependências, sem framework**. Abre em qualquer navegador e hospeda de graça.
 
 ![status](https://img.shields.io/badge/status-pronto%20para%20vender-8b7cf6)
-![license](https://img.shields.io/badge/licen%C3%A7a-comercial-5ad1c8)
 
-## ✨ O que está incluído
+## ✨ Seções da página
 
-- ✅ Hero com chamada de ação e prova social
-- ✅ Seção de benefícios (6 cards)
-- ✅ Passo a passo "como funciona"
+- ✅ Hero com promessa clara e prova social
+- ✅ "As dores" — conexão com o problema do cliente
+- ✅ "O guia" — a solução e seus benefícios
+- ✅ Como funciona (3 passos)
+- ✅ O que vem no guia (conteúdo + bônus)
 - ✅ Depoimentos
-- ✅ Tabela de planos/preços (3 colunas)
+- ✅ Oferta com preço, ancoragem e garantia
 - ✅ FAQ com acordeão
-- ✅ CTA final + rodapé
-- ✅ Animações de scroll, FAQ interativo, 100% responsivo
-- ✅ Tema configurável por variáveis CSS (troca de cores em segundos)
+- ✅ CTA final + rodapé com aviso legal
+- ✅ 100% responsivo, com animações de scroll
 
 ## 🚀 Como usar
 
-1. Abra o arquivo `index.html` em qualquer navegador — pronto, já funciona.
-2. Edite os textos diretamente no HTML.
-3. Para hospedar de graça: arraste a pasta para o [Netlify Drop](https://app.netlify.com/drop), ou use GitHub Pages / Vercel.
+1. Abra `index.html` no navegador — já funciona.
+2. Edite os textos direto no HTML (preço, depoimentos, nome do guia).
+3. Hospede de graça: arraste a pasta no [Netlify Drop](https://app.netlify.com/drop), ou use GitHub Pages / Vercel.
 
-## 🎨 Como personalizar
+## 🎨 Personalizar
 
-### Cores
-No topo do `<style>`, edite as variáveis em `:root`:
+### Cores e marca
+No topo do `<style>`, edite as variáveis em `:root` (`--accent`, `--bg`...). Troque "Noite Sem Dor" no header, footer e `<title>`.
 
-```css
-:root {
-  --accent:   #8b7cf6;  /* cor principal */
-  --accent-2: #5ad1c8;  /* cor secundária */
-  --bg:       #0e1530;  /* fundo */
-}
-```
+### Preço e oferta
+Procure a seção `<!-- OFERTA -->` no HTML e ajuste valores, parcelas e itens da lista.
 
-### Nome / marca
-Troque "RestaBem" no header, footer e `<title>`.
-
-### Conectar o checkout
+### Conectar o checkout (Hotmart, Kiwify, Cakto, Stripe...)
 No final do `<script>`, descomente e ajuste:
 
 ```js
-window.location.href = 'https://seu-checkout.com/' + plano;
+window.location.href = 'https://seu-checkout.com/' + produto;
 ```
 
-Funciona com Hotmart, Kiwify, Stripe, Eduzz, Cakto, etc.
+## ⚠️ Aviso legal
+
+O rodapé já inclui um aviso de que o guia é informativo e **não substitui orientação médica**. Mantenha esse aviso — é importante para produtos ligados a saúde e evita problemas com plataformas de pagamento.
 
 ## 📦 Estrutura
 
 ```
 sleep-ease-template/
-├── index.html      # a landing page completa
+├── index.html      # a página de vendas completa
 ├── README.md       # este arquivo
-├── LICENSE.md      # termos de licença comercial
-└── assets/         # coloque aqui suas imagens
+├── LICENSE.md       # termos de licença
+└── assets/         # coloque aqui suas imagens (capa do guia, etc.)
 ```
-
-## 💰 Pode revender?
-
-Sim. Este template é **original** (nenhum conteúdo copiado de terceiros) e pode ser usado, modificado e vendido conforme a `LICENSE.md`.
 
 ---
 
-Feito para vender. Bom negócio! 🚀
+Conteúdo 100% original. Bom negócio! 🚀
